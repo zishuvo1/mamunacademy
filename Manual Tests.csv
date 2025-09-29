@@ -1,0 +1,126 @@
+TC ID,Test Scenario,Preconditions,Priority,Severity,Module,URL,Test Steps,Data,Expected Result,Actual Result,Status,Defects,Comment
+TC001,Valid Login,User registered & on Login page,P1,Critical,Login,https://mamunacademy.com.bd/my-account/,"1. Go to Login page
+2. Enter valid email & password
+3. Click Login","Email: shuvoofficial95@gmail.com
+Password: Shuvo0401",User logged in successfully,User logged in successfully,Pass,-,Working fine
+TC002,Invalid Login,User on Login page,P1,High,Login,https://mamunacademy.com.bd/my-account/,"1. Enter valid email
+2. Enter wrong password
+3. Click Login","Email: shuvoofficial95@gmail.com
+Password: tdsuy0401","Error: ""Invalid credentials""",Unknown email address. Check again or try your username.,Fail,Bug001,Wrong error message shown
+TC003,Empty Fields,User on Login page,P2,High,Login,https://mamunacademy.com.bd/my-account/,"1. Leave Email & Password blank
+2. Click Login",N/A,Required field error,Please fill out this field.,Pass,-,As expected
+TC004,Invalid Email Format,User on Login page,P2,Medium,Login,https://mamunacademy.com.bd/my-account/,"1. Enter email as abc@xyz
+2. Enter password
+3. Click Login","Email: abc@xyz
+Password: tdsuy0401",Validation error for invalid email,Unknown email address. Check again or try your username.,Fail,Bug002,Should validate email format
+TC005,Password Masking,User on Login page,P2,Medium,Login,https://mamunacademy.com.bd/my-account/,"1. Click on password field
+2. Type password
+3. Observe field characters",N/A,Password hidden with *,Password hidden with *,Pass,-,OK
+TC006,Remember Me,User on Login page,P2,Medium,Login,https://mamunacademy.com.bd/my-account/,"1. Tick Remember Me
+2. Login
+3. Close and reopen browser
+4. Go to site again",Valid credentials,User session saved,User session saved,Pass,-,Session persists
+TC007,Forgot Password,User on Login page,P2,High,Login,https://mamunacademy.com.bd/my-account/lost-password/,"1. Click Forgot Password
+2. Enter registered email
+3. Click Submit",Registered email,Reset link sent,Reset link sent successfully,Pass,-,OK
+TC008,Multiple Wrong Attempts,User on Login page,P1,Critical,Login,https://mamunacademy.com.bd/my-account/,"1. Enter wrong credentials 5 times
+2. Observe system behavior",Invalid credentials,Account locked / captcha triggered,Check again or try your username.,Fail,Bug003,No lockout/captcha triggered
+TC009,Case Sensitivity,User on Login page,P2,Medium,Login,https://mamunacademy.com.bd/my-account/,"1. Enter USERNAME instead of username
+2. Click Login",Valid credentials,Error if case-sensitive,Error: The username username is not registered,Pass,-,OK
+TC010,Redirect After Login,User logged in,P2,Medium,Login,https://mamunacademy.com.bd/login,"1. Login with valid account
+2. Observe landing page",Valid credentials,Redirect to Dashboard/Home,Redirect to Dashboard,Pass,-,Works as expected
+TC011,Valid Registration,On Registration page,P1,High,Registration,https://mamunacademy.com.bd/my-account/,"1. Open Signup
+2. Fill valid data
+3. Submit","Email: shuvo@gmail.com
+Password: Shuvo0401#",Account created,Account created,Pass,-,OK
+TC012,Mandatory Fields,On Registration page,P1,High,Registration,https://mamunacademy.com.bd/my-account/,"1. Leave required fields empty
+2. Submit",N/A,Error messages shown,Please fill out this field.,Pass,-,Validation works
+TC013,Duplicate Email,On Registration page,P2,High,Registration,https://mamunacademy.com.bd/register,"1. Enter an existing email
+2. Submit",Existing email,"Error: ""Email already exists""",Error: An account is already registered,Pass,-,Expected
+TC014,Password Validation,On Registration page,P2,High,Registration,https://mamunacademy.com.bd/register,"1. Enter weak password
+2. Submit",12345,"Error: ""Password too weak""",Password too weak,Pass,-,Validation ok
+TC015,Confirm Password,On Registration page,P2,High,Registration,https://mamunacademy.com.bd/my-account/edit-account/,"1. Enter password
+2. Enter mismatch confirm password
+3. Submit",Password mismatch,"Error: ""Passwords do not match""",Passwords do not match,Pass,-,OK
+TC016,Login After Registration,New account registered,P2,High,Registration,https://mamunacademy.com.bd/login,1. Login with new account,New credentials,Login successful,Login successful,Pass,-,OK
+TC017,Homepage Load,Browser opened,P1,Medium,Homepage,https://mamunacademy.com.bd,"1. Enter website URL
+2. Press Enter
+3. Wait until fully loaded",N/A,"Homepage loads, no errors","Homepage loads, no errors",Pass,-,OK
+TC018,Verify Title,Homepage opened,P2,Low,Homepage,https://mamunacademy.com.bd,"1. Open homepage
+2. Check browser tab title",N/A,Title displays correctly,Title displays correctly,Pass,-,OK
+TC019,Verify Logo,Homepage opened,P2,Low,Homepage,https://mamunacademy.com.bd,"1. Click logo
+2. Observe redirect",N/A,Redirects to homepage,Redirects to homepage,Pass,-,OK
+TC020,Main Menu Links,Homepage loaded,P2,Medium,Navigation,https://mamunacademy.com.bd,1. Click each main menu link,N/A,Each link navigates correctly,Each link navigates correctly,Pass,-,OK
+TC021,Submenu Links,Homepage loaded,P2,Medium,Navigation,https://mamunacademy.com.bd,"1. Hover dropdown menu
+2. Click submenu link",N/A,Submenu items open correct pages,Submenu items open correct pages,Pass,-,OK
+TC022,Footer Links,Homepage loaded,P2,Medium,Navigation,https://mamunacademy.com.bd,"1. Scroll footer
+2. Click all links",N/A,Footer links open correct pages,Footer links open correct pages,Pass,-,OK
+TC023,Banner Images,Homepage loaded,P2,Medium,Homepage,https://mamunacademy.com.bd,"1. Check all banners
+2. Verify no broken image",N/A,Images load correctly,Images load correctly,Pass,-,OK
+TC024,Slider Functionality,Homepage loaded,P2,Low,Homepage,https://mamunacademy.com.bd,"1. Use slider arrows
+2. Observe change",N/A,Slider works correctly,Slider works correctly,Pass,-,OK
+TC025,Responsive Check,Browser resized,P2,Low,Homepage,https://mamunacademy.com.bd,"1. Switch to mobile/tablet
+2. Observe layout",N/A,Layout adjusts correctly,Layout adjusts correctly,Pass,-,OK
+TC026,Search Bar,Homepage loaded,P2,Medium,Homepage,https://mamunacademy.com.bd/?s=IDM&post_type=product,"1. Enter keyword
+2. Click search",Keyword: IDM,Relevant results appear,4 Products found Relevant results,Pass,-,OK
+TC027,Product Listing,Product page available,P1,Medium,Product,https://mamunacademy.com.bd/product/internet-download-manager-lifetime_global-key/,"1. Navigate to product listing
+2. Click a product",N/A,Product detail page opens,Product detail page opens,Pass,-,OK
+TC028,Product Name,Product detail page opened,P2,Medium,Product,https://mamunacademy.com.bd/product/internet-download-manager-lifetime_global-key/,1. Check product name,N/A,Correct product name displayed,Correct product name displayed,Pass,-,OK
+TC029,Product Price,Product detail page opened,P2,Medium,Product,https://mamunacademy.com.bd/product/internet-download-manager-lifetime_global-key/,1. Check price displayed,N/A,Correct price shown,Correct price shown,Pass,-,OK
+TC030,Product Description,Product detail page opened,P2,Medium,Product,https://mamunacademy.com.bd/product/internet-download-manager-lifetime_global-key/,1. Read product description,N/A,Description visible,Description visible,Pass,-,OK
+TC031,Add to Cart,Product detail page opened,P1,Critical,Product,https://mamunacademy.com.bd/product/internet-download-manager-lifetime_global-key/,"1. Click Add to Cart
+2. Go to Cart page",N/A,Product added to cart,Product added to cart,Pass,-,OK
+TC032,Cart Quantity,Cart page opened,P2,Medium,Product,https://mamunacademy.com.bd/cart/,"1. Change quantity
+2. Click Update",N/A,Quantity updates correctly,Quantity updates correctly,Pass,-,OK
+TC033,Remove from Cart,Cart page opened,P2,Medium,Product,https://mamunacademy.com.bd/cart,1. Click Remove,N/A,Item removed successfully,Item removed successfully,Pass,-,OK
+TC034,Continue Shopping,Cart page opened,P2,Medium,Product,https://mamunacademy.com.bd/shop/,1. Click Back to shop,N/A,Redirected to product listing,Redirected to product listing,Pass,-,OK
+TC035,Related Products,Product detail page opened,P2,Medium,Product,https://mamunacademy.com.bd/shop/,1. Scroll down to related products,N/A,Related products display correctly,Related products display correctly,Pass,-,OK
+TC036,Image Zoom,Product detail page opened,P2,Medium,Product,https://mamunacademy.com.bd/product/internet-download-manager-lifetime_global-key-for-5pcs/#&gid=1&pid=1,1. Click on product image,N/A,Image zooms/expands properly,Image zooms/expands properly,Pass,-,OK
+TC037,Open Checkout Page,Cart page has items,P1,Critical,Checkout,https://mamunacademy.com.bd/checkout/,1. Click Checkout button,N/A,Checkout page loads,Checkout page loads,Pass,-,OK
+TC038,Mandatory Fields,Checkout page opened,P1,High,Checkout,https://mamunacademy.com.bd/checkout,"1. Leave required fields empty
+2. Submit",N/A,Error messages displayed,Please read and accept the terms and conditions to proceed with your order.,Pass,-,T&C validation works
+TC039,Invalid Email,Checkout page opened,P2,High,Checkout,https://pay.mamunacademy.com.bd/payment/...,"1. Enter invalid email
+2. Submit",test@,Error message appears,Success message displayed,Fail,Bug004,Invalid email accepted
+TC040,Invalid Phone,Checkout page opened,P2,High,Checkout,https://mamunacademy.com.bd/checkout,"1. Enter invalid phone
+2. Submit",123abc,Error message appears,Success message displayed,Fail,Bug005,Invalid phone accepted
+TC041,Valid Form Submission,Checkout page opened,P1,Critical,Checkout,https://mamunacademy.com.bd/checkout,"1. Fill all valid details
+2. Submit",Valid details,Success message displayed,Success message displayed,Pass,-,OK
+TC042,Select Payment Method,Checkout page opened,P1,High,Payment,https://mamunacademy.com.bd/checkout,1. Choose Mobile Banking and bank transfer,N/A,Payment option selected,Payment option selected,Pass,-,OK
+TC043,Payment Process,Payment page opened,P1,Critical,Payment,https://mamunacademy.com.bd/checkout,"1. Complete payment
+2. Observe result",Account number transfer,Payment successful,Payment successful,Pass,-,OK
+TC044,Cancel Payment,Payment page opened,P2,High,Payment,https://mamunacademy.com.bd/checkout,"1. Start payment
+2. Click Cancel",N/A,"Payment cancelled, redirected properly","Payment cancelled, redirected properly",Pass,-,OK
+TC045,Multiple Payments,Payment page opened,P2,High,Payment,https://mamunacademy.com.bd/checkout,1. Try multiple payment methods sequentially,N/A,All payment methods work,All payment methods work,Pass,-,OK
+TC046,Actual payment are not pay,Payment page opened,P1,Critical,Payment,https://mamunacademy.com.bd/checkout,"1. Enter invalid payment
+2. Submit",Price: 499tk Payment: 5th,Payment not successful (system should reject invalid/less payment),Payment successful,Fail,Bug006,Wrong payment accepted
+TC047,Coupon / Discount,Checkout page opened,P2,Medium/High,Checkout,https://mamunacademy.com.bd/checkout,"1. Enter valid coupon
+2. Click Apply",Valid coupon,Discount applied correctly,Discount applied correctly,Pass,-,OK
+TC048,Open Contact Page,Homepage opened,P2,Medium,Contact Form,https://mamunacademy.com.bd/contact,1. Navigate to Contact page,N/A,Contact page loads,Contact page loads,Pass,-,OK
+TC049,Submit Empty Form,Contact Form opened,P2,Medium,Contact Form,https://mamunacademy.com.bd/contact/,"1. Leave all fields blank
+2. Submit",N/A,Error messages displayed,The field is required.,Pass,-,Validation works
+TC050,Invalid Email / Phone,Contact Form opened,P2,Medium,Contact Form,https://mamunacademy.com.bd/contact,"1. Enter invalid email/phone
+2. Submit",tast@gmail.com,Validation error appears,Validation error appears,Pass,-,OK
+TC051,Valid Submission,Contact Form opened,P1,High,Contact Form,https://mamunacademy.com.bd/contact,"1. Fill all valid fields
+2. Submit",Valid details,Success message displayed,Validation error appears,Fail,Bug007,Wrong behavior
+TC052,Mobile Responsiveness,Homepage opened,P2,Low,UI,https://mamunacademy.com.bd,"1. Open on mobile device
+2. Observe layout",N/A,Layout adjusts correctly,Layout adjusts correctly,Pass,-,OK
+TC053,Tablet Responsiveness,Homepage opened,P2,Low,UI,https://mamunacademy.com.bd,"1. Open on tablet
+2. Observe layout",N/A,Layout adjusts correctly,Layout adjusts correctly,Pass,-,OK
+TC054,Desktop Responsiveness,Homepage opened,P2,Low,UI,https://mamunacademy.com.bd,"1. Open on desktop
+2. Observe layout",N/A,Layout correct,Layout correct,Pass,-,OK
+TC055,Buttons Functionality,Any page opened,P2,Low,UI,https://mamunacademy.com.bd,"1. Click all buttons
+2. Verify action",N/A,Buttons work correctly,Buttons work correctly,Pass,-,OK
+TC056,Text & Font,Any page opened,P2,Low,UI,https://mamunacademy.com.bd,"1. Verify headings and text font, size, style",N/A,Correct font & style,Correct font & style,Pass,-,OK
+TC057,Color & Contrast,Any page opened,P2,Low,UI,https://mamunacademy.com.bd,1. Observe colors and contrast,N/A,Colors readable,Colors readable,Pass,-,OK
+TC058,Images Display,Any page opened,P2,Low,UI,https://mamunacademy.com.bd,1. Verify all images load,N/A,No broken images,No broken images,Pass,-,OK
+TC059,Pop-ups & Alerts,Any page opened,P2,Low,UI,https://mamunacademy.com.bd,"1. Trigger pop-ups/alerts
+2. Close",N/A,Pop-ups dismiss correctly,Pop-ups dismiss correctly,Pass,-,OK
+TC060,Scroll & Navigation,Any page opened,P2,Low,UI,https://mamunacademy.com.bd,"1. Scroll up/down
+2. Click navigation links",N/A,"Smooth scrolling, no layout breaking","Smooth scrolling, no layout breaking",Pass,-,OK
+TC061,Error Pages,Invalid URL,P2,Low,UI,https://mamunacademy.com.bd/invalid,1. Open invalid URL,N/A,404 page displayed,404 page displayed,Pass,-,OK
+TC062,Internal Links,Any page opened,P2,Low,Links,https://mamunacademy.com.bd,1. Click all internal links,N/A,No broken links,No broken links,Pass,-,OK
+TC063,External Links,Any page opened,P2,Low,Links,https://mamunacademy.com.bd,1. Click external links,N/A,Open correctly in new tab,Open correctly in new tab,Pass,-,OK
+TC064,Footer Links,Footer section,P2,Low,Links,https://mamunacademy.com.bd,1. Click all footer links,N/A,Links work correctly,Links work correctly,Pass,-,OK
+TC065,Product Images,Product pages,P2,Low/Medium,Images,https://mamunacademy.com.bd/shop/,1. Verify all product images load,N/A,No broken product images,No broken product images,Pass,-,OK
+TC066,PDF Invoice,Order placed successfully,P2,Low/Medium,Order,https://mamunacademy.com.bd/my-account/orders/,"1. Complete order
+2. Download Invoice PDF",N/A,PDF generated correctly,PDF generated correctly,Pass,-,OK

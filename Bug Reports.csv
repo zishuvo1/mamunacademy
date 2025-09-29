@@ -1,0 +1,21 @@
+Bug ID,TC ID,Module,Bug Summary,Steps to Reproduce,Test Data,Expected Result,Actual Result,Severity,Status
+Bug001,TC039,Checkout,Invalid Email accepted / wrong validation,"1. Open Checkout Page
+2. Enter invalid email
+3. Submit",test@,Error message appears,Success message displayed,High,Open
+Bug002,TC040,Checkout,Invalid Phone accepted / wrong validation,"1. Open Checkout Page
+2. Enter invalid phone
+3. Submit",123abc,Error message appears,Success message displayed,High,Open
+Bug003,TC046,Payment,System accepts invalid/less payment,"1. Open Payment Page
+2. Enter invalid payment
+3. Submit","Price: 499tk, Payment: 5th",Payment not successful (system should reject invalid/less payment),Payment successful,Critical,Open
+Bug004,TC051,Contact Form,Valid form submission shows validation error,"1. Open Contact Form
+2. Fill all valid fields
+3. Submit",Valid details,Success message displayed,Validation error appears,High,Open
+Bug005,TC002,Login,Invalid Login shows wrong message,"1. Enter valid email
+2. Enter wrong password
+3. Click Login","Email: shuvoofficial95@gmail.com, Password: tdsuy0401","Error: ""Invalid credentials""",Unknown email address. Check again or try your username.,High,Open
+Bug006,TC004,Login,Invalid Email Format shows wrong error,"1. Enter email as abc@xyz
+2. Enter password
+3. Click Login","Email: abc@xyz, Password: tdsuy0401",Validation error for invalid email,Unknown email address. Check again or try your username.,Medium,Open
+Bug007,TC009,Login,Case Sensitivity shows wrong error,"1. Enter USERNAME instead of username
+2. Click Login",Valid credentials,Error if case-sensitive,Error: The username username is not registered on this site.,Medium,Open
